@@ -1,0 +1,10 @@
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule "(^|/)\.git" - [F,L]
+</IfModule>
+
+<FilesMatch "^(\.cpanel\.yml|\.htaccess|publicar\.bat|publicar-deploy\.bat)$">
+  Require all denied
+</FilesMatch>
