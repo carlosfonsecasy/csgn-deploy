@@ -1,0 +1,4 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/elgor248/csgestaoenegocios.com.br/ && /bin/cp -R /home2/elgor248/csgn-deploy/. $DEPLOYPATH

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contate-nos - CS Gestão e Negócios</title>
+<meta name="description" content="Fale com a CSGN sobre o seu projeto de missão crítica.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><img src="assets/csgn_logo.png" alt="CSGN"></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="servicos.html">Serviços</a></li>
+    <li><a href="valor-agregado.html">Valor Agregado</a></li>
+    <li><a href="casos-de-uso.html">Casos de Uso</a></li>
+    <li><a href="contato.html" class="active">Contate-nos</a></li>
+  </ul>
+  <a class="cta" href="contato.html">Fale conosco</a>
+</nav>
+
+<header class="hero" style="padding:64px 40px 72px;">
+  <svg class="hero-graphic" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+    <circle cx="150" cy="210" r="95" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="235" cy="210" r="95" stroke="#FFFFFF" stroke-width="2"/>
+    <g stroke="#FFFFFF" stroke-width="1.2">
+      <line x1="260" y1="60" x2="320" y2="30"/>
+      <line x1="320" y1="30" x2="370" y2="70"/>
+      <line x1="260" y1="60" x2="300" y2="110"/>
+      <line x1="300" y1="110" x2="370" y2="70"/>
+    </g>
+    <g fill="#FFFFFF">
+      <circle cx="260" cy="60" r="4"/>
+      <circle cx="320" cy="30" r="4"/>
+      <circle cx="370" cy="70" r="4"/>
+      <circle cx="300" cy="110" r="4"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">Contate-nos</div>
+    <h1 style="font-size:36px;">Vamos conversar sobre o seu próximo projeto crítico</h1>
+    <p class="lead">Conte o contexto - retornamos com um diagnóstico inicial sem compromisso.</p>
+  </div>
+</header>
+
+<section class="section bg-white">
+  <div class="grid grid-2">
+    <div>
+      <h2 class="section-title" style="font-size:22px;">Envie uma mensagem</h2>
+      <form class="contact-form" action="mailto:comercial@csgestaoenegocios.com.br" method="post" enctype="text/plain">
+        <div>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+        <div>
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@empresa.com.br" required>
+        </div>
+        <div>
+          <label for="servico">Serviço de interesse</label>
+          <select id="servico" name="servico">
+            <option>Intermediação comercial</option>
+            <option>Governança & comissionamento</option>
+            <option>Projetos executivos & BIM</option>
+            <option>Captação de recursos</option>
+            <option>Inteligência artificial</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte o contexto do seu projeto"></textarea>
+        </div>
+        <button type="submit">Enviar mensagem</button>
+      </form>
+      <p style="font-size:11.5px;color:var(--textGray);margin-top:10px;">
+        * Formulário estático de exemplo (abre seu cliente de e-mail padrão). Para produção,
+        conectar a um backend de formulário (ex: Formspree, servidor próprio) antes de publicar.
+      </p>
+    </div>
+
+    <div class="contact-info-card">
+      <h2 class="section-title" style="font-size:22px;">Informações de contato</h2>
+      <div class="row"><div class="icon-wrap sm" style="margin:0;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6l9 7 9-7"/></svg></div><span><b>E-mail</b> comercial@csgestaoenegocios.com.br</span></div>
+      <div class="row"><div class="icon-wrap sm" style="margin:0;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div><span><b>Telefone</b> +55 (11) 99728-3484</span></div>
+      <div class="row"><div class="icon-wrap sm" style="margin:0;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div><span><b>Site</b> csgestaoenegocios.com.br</span></div>
+      <div class="row"><div class="icon-wrap sm" style="margin:0;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div><span><b>Endereço</b> Rua Paiquere, 1359, lote 21 - Valinhos/SP - CEP 13271-600</span></div>
+      <div class="row"><div class="icon-wrap sm" style="margin:0;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><span><b>CNPJ</b> 51.136.093/0001-17</span></div>
+      <div class="divider-bar"></div>
+      <p style="font-size:13px;color:var(--textGray);">
+        Atendimento em dias úteis, 9h às 18h. Para propostas em andamento, utilize o
+        canal já combinado com o time responsável.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="col">
+      <img src="assets/csgn_logo.png" alt="CSGN" style="height:30px;background:#fff;padding:6px 10px;border-radius:6px;">
+      <p style="margin-top:14px;">Gestão, governança e inteligência para projetos de missão crítica.</p>
+    </div>
+    <div class="col">
+      <h4>Navegação</h4>
+      <a href="servicos.html">Serviços</a>
+      <a href="valor-agregado.html">Valor Agregado</a>
+      <a href="casos-de-uso.html">Casos de Uso</a>
+      <a href="contato.html">Contate-nos</a>
+    </div>
+    <div class="col">
+      <h4>Legal</h4>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="termos.html">Termos de Uso</a>
+    </div>
+    <div class="col">
+      <h4>Contato</h4>
+      <p>comercial@csgestaoenegocios.com.br</p>
+      <p>+55 (11) 99728-3484</p>
+      <p>csgestaoenegocios.com.br</p>
+    </div>
+  </div>
+  <div class="bottom">© 2026 CS Gestão e Negócios. Todos os direitos reservados.</div>
+</footer>
+
+</body>
+</html>
