@@ -108,7 +108,7 @@ p.section-lead{font-size:15.5px;color:var(--textGray);line-height:1.75;max-width
 .grid-5{grid-template-columns:repeat(5,1fr);}
 .grid-4{grid-template-columns:repeat(4,1fr);}
 @media (max-width:900px){
-  .grid-3,.grid-2,.grid-5,.grid-4{grid-template-columns:1fr;}
+  .grid-3,.grid-2,.grid-4,.grid-5{grid-template-columns:1fr;}
 }
 
 .card{
@@ -175,3 +175,15 @@ form.contact-form button:hover{background:#0c68ac;}
 .contact-info-card{background:#fff;border:1px solid var(--borderLight);border-radius:12px;padding:28px;}
 .contact-info-card .row{display:flex;gap:12px;margin-bottom:16px;font-size:13.5px;color:var(--textGray);}
 .contact-info-card .row b{color:var(--darkBlue);min-width:90px;display:inline-block;}
+
+/* planos (17/set/2026) */
+.plan{display:flex;flex-direction:column;}
+.plan .price{font-size:30px;font-weight:700;color:var(--darkBlue);margin:6px 0 2px;}
+.plan .price small{font-size:13px;font-weight:400;color:var(--textGray);}
+.plan .var{font-size:12px;font-weight:600;color:var(--green);margin:0 0 8px;}
+.plan.featured{border:2px solid var(--blue);}
+.plan ul{margin-top:10px;}
+.note{font-size:12.5px;color:var(--textGray);font-style:italic;margin-top:14px;}
+.sub-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+.sub-list .card h3{font-size:15px;}
+@media (max-width:900px){.sub-list{grid-template-columns:1fr;}}
