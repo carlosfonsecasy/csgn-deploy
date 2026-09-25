@@ -59,7 +59,7 @@ a{color:inherit;}
   .nav-toggle{display:flex;}
   .nav.open ul{
     display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
-    background:rgba(7,63,106,.98);padding:8px 24px 16px;box-shadow:0 12px 24px rgba(0,0,0,.25);
+    background:#073f6a;padding:8px 24px 16px;box-shadow:0 12px 24px rgba(0,0,0,.25);
   }
   .nav.open ul li a{display:block;padding:12px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,.08);}
   .nav.open ul li:last-child a{border-bottom:0;}
