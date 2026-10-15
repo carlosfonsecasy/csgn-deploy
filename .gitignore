@@ -1,0 +1,5 @@
+
+# Arquivos internos: não publicar no site
+SICOM/
+*.zip
+relatorio_sicom_v2.html
