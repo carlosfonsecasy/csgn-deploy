@@ -11,7 +11,7 @@ echo Digite cada linha abaixo no terminal do cPanel (colar no terminal do cPanel
 echo.
 echo   git -C /home2/elgor248/csgn-deploy pull origin main
 echo.
-echo   rsync -a --exclude='.git' --exclude='.gitignore' /home2/elgor248/csgn-deploy/ /home2/elgor248/csgestaoenegocios.com.br/
+echo   rsync -a --exclude='.git' --exclude='.gitignore' --exclude='.cpanel.yml' --exclude='*.bat' /home2/elgor248/csgn-deploy/ /home2/elgor248/csgestaoenegocios.com.br/
 echo.
 echo Abrindo o cPanel agora...
 echo.
