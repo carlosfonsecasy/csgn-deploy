@@ -8,6 +8,6 @@ DirectoryIndex index.html
   RewriteRule "(^|/)\.git" - [F,L]
 </IfModule>
 
-<FilesMatch "^(\.cpanel\.yml|\.htaccess|publicar\.bat|publicar-deploy\.bat)$">
+<FilesMatch "^(\.cpanel\.yml|\.gitignore|\.htaccess|publicar\.bat|publicar-deploy\.bat)$">
   Require all denied
 </FilesMatch>

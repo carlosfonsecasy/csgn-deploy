@@ -7,11 +7,11 @@ echo ========================================
 echo.
 echo Este script abre o terminal do cPanel para voce rodar 2 comandos no servidor.
 echo.
-echo Copie e cole cada linha abaixo no terminal do cPanel:
+echo Digite cada linha abaixo no terminal do cPanel (colar no terminal do cPanel costuma falhar):
 echo.
 echo   git -C /home2/elgor248/csgn-deploy pull origin main
 echo.
-echo   rsync -a --exclude='.git' /home2/elgor248/csgn-deploy/ /home2/elgor248/csgestaoenegocios.com.br/
+echo   rsync -a --exclude='.git' --exclude='.gitignore' /home2/elgor248/csgn-deploy/ /home2/elgor248/csgestaoenegocios.com.br/
 echo.
 echo Abrindo o cPanel agora...
 echo.
