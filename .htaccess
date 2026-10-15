@@ -11,3 +11,10 @@ DirectoryIndex sicom.html index.html
 <FilesMatch "^(\.cpanel\.yml|\.gitignore|\.htaccess|publicar\.bat|publicar-deploy\.bat)$">
   Require all denied
 </FilesMatch>
+
+# Páginas e CSS: o navegador confere se há versão nova a cada visita (deploy aparece na hora)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
