@@ -2,164 +2,954 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CS Gestão e Negócios - SICOM, marketing com IA e gestão de projetos</title>
-<meta name="description" content="CSGN: SICOM, o sistema comercial com agentes de IA, SIM, o sistema de marketing, e gestão de projetos de missão crítica em data centers.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SICOM · CRM com agentes de IA no WhatsApp | CS Gestão e Negócios</title>
+<meta name="description" content="SICOM: CRM com agentes de IA que atendem, qualificam e vendem no WhatsApp 24 horas, pelo seu catálogo. Planos a partir de R$ 399,99/mês.">
 <meta name="facebook-domain-verification" content="38vwxsnxzs63l57np0adpwxpz6wrpa" />
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/csgn_logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap">
+
+<style>
+/* ── Design plan ──────────────────────────────────────────
+   Layout: PME SaaS landing: nav escuro / hero split /
+   seções alternadas / planos / depoimentos / CTA / footer
+   Color: navy âncora · azul CSGN · laranja ação única
+   Type: Sora (headings, ênfase) + Inter (corpo/dados)
+   Tamanhos: 11px · 13px · 15px · 20px · 32px-50px  → 5
+   ─────────────────────────────────────────────────────── */
+:root {
+  --navy:       #0B1E3A;
+  --blue:       #0A5A96;
+  --blue-mid:   #1870B8;
+  --blue-lt:    #E6F0FA;
+  --orange:     #E05A1B;
+  --orange-dk:  #C24D14;
+  --bg:         #FFFFFF;
+  --bg-alt:     #F4F8FC;
+  --fg:         #0B1E3A;
+  --fg-2:       #506070;
+  --border:     #D2E2F0;
+  --white:      #FFFFFF;
+  --radius:     8px;
+  --radius-lg:  14px;
+  --shadow:     0 2px 16px rgba(10,90,150,.10);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:      #0B1720; --bg-alt: #0E2030;
+    --fg:      #DDEAF6; --fg-2:   #7A9AB5;
+    --border:  #1A3050; --blue-lt: #0C2540;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:      #0B1720; --bg-alt: #0E2030;
+  --fg:      #DDEAF6; --fg-2:   #7A9AB5;
+  --border:  #1A3050; --blue-lt: #0C2540;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px; line-height: 1.65;
+}
+h1,h2,h3,h4 {
+  font-family: 'Sora', system-ui, sans-serif;
+  text-wrap: balance; line-height: 1.2;
+}
+a { color: var(--blue); text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: var(--radius);
+  font-family: 'Sora', sans-serif; font-size: 14px;
+  font-weight: 700; cursor: pointer; border: none;
+  transition: background .15s, opacity .15s, transform .1s;
+  text-decoration: none; white-space: nowrap;
+}
+.btn:active { transform: scale(.98); }
+.btn-lg { padding: 15px 30px; font-size: 15px; }
+.btn-primary { background: var(--orange-dk); color: #fff; }
+.btn-primary:hover { background: #A8420F; }
+.btn-outline {
+  background: transparent; color: var(--blue);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover { border-color: var(--blue); background: var(--blue-lt); }
+.btn-ghost {
+  background: transparent; color: var(--white);
+  border: 1.5px solid rgba(255,255,255,.35);
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,.75); background: rgba(255,255,255,.06); }
+
+/* ══ NAV ══════════════════════════════════════════════ */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px);
+  z-index: 100; background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.nav-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 20px;
+  padding-block: 13px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  color: white; font-family: 'Sora', sans-serif;
+  font-size: 15px; font-weight: 700; flex-shrink: 0;
+}
+.logo-mark {
+  width: 32px; height: 32px; border-radius: 6px;
+  background: var(--blue); display: grid; place-items: center;
+  font-size: 13px; font-weight: 800; color: white; letter-spacing: -.5px;
+}
+.nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+.nav-links a {
+  padding: 7px 14px; border-radius: 6px; color: rgba(255,255,255,.7);
+  font-size: 14px; font-weight: 500; transition: .15s;
+}
+.nav-links a:hover { color: white; background: rgba(255,255,255,.08); }
+.nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.nav-entrar {
+  color: rgba(255,255,255,.65); font-size: 13px; font-weight: 500;
+  padding: 6px 12px; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.18); transition: .15s;
+}
+.nav-entrar:hover { color: white; border-color: rgba(255,255,255,.45); }
+.nav-cta { padding: 8px 18px; font-size: 13px; }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+  color: rgba(255,255,255,.8);
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: currentColor; border-radius: 2px;
+  transition: transform .2s, opacity .2s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile {
+  display: none; flex-direction: column;
+  background: var(--navy); padding: 14px 20px 20px;
+  border-top: 1px solid rgba(255,255,255,.07); gap: 4px;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  color: rgba(255,255,255,.75); font-size: 15px;
+  padding: 10px 12px; border-radius: 6px;
+  font-weight: 500; transition: .15s;
+}
+.nav-mobile a:hover { color: white; background: rgba(255,255,255,.08); }
+.nav-mobile .btn { width: 100%; justify-content: center; margin-top: 8px; }
+
+/* ══ HERO ══════════════════════════════════════════════ */
+.hero { background: var(--navy); padding-block: 80px 64px; overflow: hidden; }
+.hero-inner {
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,460px);
+  gap: 56px; align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 18px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 20px; height: 2px;
+  background: var(--orange); border-radius: 2px;
+}
+.hero h1 {
+  font-size: clamp(32px, 4vw, 50px); font-weight: 800;
+  color: white; margin-bottom: 18px; line-height: 1.12;
+}
+.hero h1 em { font-style: normal; color: var(--orange); }
+.hero-sub {
+  font-size: 17px; color: rgba(255,255,255,.62);
+  max-width: 480px; margin-bottom: 34px; line-height: 1.65;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.hero-note {
+  margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.4);
+  display: flex; align-items: center; gap: 6px;
+}
+.hero-note::before { content: '✓'; color: #4ADE80; font-weight: 700; }
+.hero-lia { margin-top: 6px; color: rgba(255,255,255,.75); }
+.hero-lia::before { content: '●'; color: #4ADE80; font-size: 10px; }
+
+/* Dashboard mockup */
+.dash {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px; overflow: hidden;
+}
+.dash-bar {
+  background: rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: 10px 16px; display: flex; align-items: center; gap: 8px;
+}
+.dash-dot { width: 8px; height: 8px; border-radius: 50%; }
+.dash-dot:nth-child(1) { background: rgba(255,90,90,.45); }
+.dash-dot:nth-child(2) { background: rgba(255,190,0,.45); }
+.dash-dot:nth-child(3) { background: rgba(0,200,100,.35); }
+.dash-url {
+  flex: 1; font-size: 11px; color: rgba(255,255,255,.28);
+  text-align: center; letter-spacing: .02em;
+}
+.dash-body { padding: 18px; }
+.dash-stats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 10px; margin-bottom: 18px;
+}
+.dash-stat {
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 7px; padding: 12px 10px;
+}
+.dash-stat-lbl {
+  font-size: 10px; color: rgba(255,255,255,.38);
+  text-transform: uppercase; letter-spacing: .07em; margin-bottom: 5px;
+}
+.dash-stat-val {
+  font-family: 'Sora', sans-serif; font-size: 24px;
+  font-weight: 800; color: white;
+  font-variant-numeric: tabular-nums;
+}
+.dash-stat-delta { font-size: 11px; color: #4ADE80; margin-top: 2px; }
+.dash-funnel-lbl {
+  font-size: 10px; color: rgba(255,255,255,.38);
+  text-transform: uppercase; letter-spacing: .07em; margin-bottom: 10px;
+}
+.dash-funnel { display: flex; flex-direction: column; gap: 7px; }
+.dash-row { display: flex; align-items: center; gap: 10px; }
+.dash-stage { font-size: 11px; color: rgba(255,255,255,.5); width: 76px; flex-shrink: 0; }
+.dash-track {
+  flex: 1; height: 16px; background: rgba(255,255,255,.04);
+  border-radius: 4px; overflow: hidden;
+}
+.dash-fill { height: 100%; border-radius: 4px; }
+.dash-count {
+  font-size: 11px; color: rgba(255,255,255,.38);
+  width: 28px; text-align: right; flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ══ CHAT MOCKUP (hero) ═══════════════════════════════ */
+.chat { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; overflow: hidden; }
+.chat-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px; background: rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.08); }
+.chat-who { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; font-weight: 600; }
+.chat-who small { display: block; font-size: 12px; font-weight: 400; color: rgba(255,255,255,.7); }
+.chat-av { width: 32px; height: 32px; border-radius: 50%; background: var(--blue); display: grid; place-items: center; font-size: 12px; font-weight: 700; color: #fff; }
+.chat-tag { font-size: 12px; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 2px 10px; }
+.chat-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.msg { max-width: 82%; padding: 9px 13px; border-radius: 12px; font-size: 14px; line-height: 1.45; }
+.msg-in { align-self: flex-start; background: rgba(255,255,255,.1); color: #fff; border-bottom-left-radius: 4px; }
+.msg-out { align-self: flex-end; background: var(--blue); color: #fff; border-bottom-right-radius: 4px; }
+.msg-meta { display: block; font-size: 12px; font-weight: 600; color: #BFD9F2; margin-bottom: 2px; }
+.chat-ok { align-self: center; font-size: 12px; font-weight: 600; color: #86EFAC; background: rgba(74,222,128,.12); border-radius: 20px; padding: 4px 12px; }
+.approve { margin: 4px 16px 16px; background: #fff; color: var(--navy); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.approve-top { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #8A4B00; }
+.approve p { font-size: 14px; line-height: 1.45; }
+.approve p strong { font-family: 'Sora', sans-serif; }
+.approve-btns { display: flex; gap: 8px; }
+.approve-btns span { flex: 1; text-align: center; font-size: 13px; font-weight: 700; padding: 8px; border-radius: 6px; }
+.approve-yes { background: var(--navy); color: #fff; }
+.approve-no { border: 1.5px solid #D2E2F0; color: var(--navy); }
+.mock-note { margin-top: 10px; font-size: 12px; color: rgba(255,255,255,.65); text-align: center; }
+
+/* ══ AGENTE ═══════════════════════════════════════════ */
+.agent-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.agent-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; }
+.agent-kicker { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.agent-card h3 { font-size: 18px; font-weight: 700; }
+.agent-card p { font-size: 14px; color: var(--fg-2); line-height: 1.6; }
+.agent-tiers { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.agent-tiers span { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: var(--blue-lt); color: var(--blue); }
+.guard { margin-top: 24px; display: flex; gap: 16px; align-items: flex-start; background: var(--navy); color: #fff; border-radius: var(--radius-lg); padding: 24px 28px; }
+.guard svg { flex-shrink: 0; margin-top: 2px; }
+.guard h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.guard p { font-size: 15px; color: rgba(255,255,255,.82); line-height: 1.6; }
+
+/* ══ FLUXO 4 PASSOS ═════════════════════════════════════ */
+.flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; list-style: none; }
+.flow li { border-top: 3px solid var(--blue); padding-top: 18px; display: flex; flex-direction: column; gap: 6px; }
+.flow-step { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.flow h3 { font-size: 16px; font-weight: 700; }
+.flow p { font-size: 14px; color: var(--fg-2); line-height: 1.6; }
+.feat-icon svg, .outro-icon svg { color: var(--blue); }
+
+/* ══ SECTION SHARED ══════════════════════════════════ */
+.section { padding-block: 80px; }
+.section-alt { background: var(--bg-alt); }
+.sec-header {
+  text-align: center; max-width: 600px;
+  margin-inline: auto; margin-bottom: 56px;
+}
+.sec-eye {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 12px;
+}
+.sec-header h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 700; margin-bottom: 12px; }
+.sec-header p { font-size: 15px; color: var(--fg-2); max-width: 520px; margin-inline: auto; }
+
+/* ══ PROBLEMA ══════════════════════════════════════════ */
+.problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.problem-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius); padding: 28px 24px;
+}
+.problem-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.problem-card p { font-size: 14px; color: var(--fg-2); line-height: 1.6; }
+
+/* ══ FEATURES ══════════════════════════════════════════ */
+.features-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+.feat-card {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.feat-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+.feat-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--blue-lt); display: grid; place-items: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.feat-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+.feat-card p { font-size: 14px; color: var(--fg-2); line-height: 1.55; }
+
+/* ══ COMO FUNCIONA ══════════════════════════════════════ */
+.steps-wrap { position: relative; }
+.steps-connector {
+  position: absolute; top: 32px;
+  left: calc(100%/6); right: calc(100%/6);
+  height: 1px; background: var(--border); z-index: 0;
+}
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; position: relative; z-index: 1; }
+.step { text-align: center; padding: 24px 20px; }
+.step-num {
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: var(--bg);
+  display: grid; place-items: center; margin-inline: auto; margin-bottom: 20px;
+  font-family: 'Sora', sans-serif; font-size: 22px;
+  font-weight: 800; color: var(--blue);
+}
+.step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.step p { font-size: 14px; color: var(--fg-2); line-height: 1.6; }
+
+/* ══ PLANOS ══════════════════════════════════════════ */
+.plans-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px; max-width: 1120px; margin-inline: auto;
+}
+.plan {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 36px 32px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.plan.featured {
+  background: var(--navy); border-color: var(--navy); color: white;
+}
+.plan-badge {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px;
+  background: var(--orange-dk); color: white; margin-bottom: 20px;
+  align-self: flex-start;
+}
+.plan-name {
+  font-size: 22px; font-weight: 800; margin-bottom: 8px;
+}
+.plan-desc {
+  font-size: 14px; color: var(--fg-2); margin-bottom: 24px; line-height: 1.55;
+}
+.plan.featured .plan-desc { color: rgba(255,255,255,.6); }
+.plan-price { margin-bottom: 28px; }
+.plan-from { font-size: 13px; color: var(--fg-2); }
+.plan.featured .plan-from { color: rgba(255,255,255,.5); }
+.plan-val {
+  font-family: 'Sora', sans-serif; font-size: 40px;
+  font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums;
+  display: flex; align-items: baseline; gap: 4px; flex-wrap: wrap;
+}
+.plan-per { font-size: 15px; font-weight: 600; color: var(--fg-2); }
+.plan.featured .plan-per { color: rgba(255,255,255,.6); }
+.plan-items {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 10px; margin-bottom: 32px; flex: 1;
+}
+.plan-items li {
+  font-size: 14px; display: flex; align-items: flex-start; gap: 9px;
+}
+.plan-items li::before {
+  content: '✓'; font-weight: 700; color: var(--blue);
+  flex-shrink: 0; margin-top: 1px;
+}
+.plan.featured .plan-items li::before { color: rgba(255,255,255,.8); }
+.plan.featured .plan-items li { color: rgba(255,255,255,.82); }
+.plan .btn { width: 100%; justify-content: center; }
+.plan.featured .btn { background: white; color: var(--navy); }
+.plan.featured .btn:hover { background: rgba(255,255,255,.9); }
+.plans-note {
+  text-align: center; margin-top: 20px;
+  font-size: 13px; color: var(--fg-2);
+}
+
+
+/* ══ CTA FINAL ══════════════════════════════════════════ */
+.cta-sec { background: var(--navy); padding-block: 80px; text-align: center; }
+.cta-sec h2 {
+  color: white; font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800; margin-bottom: 14px;
+}
+.cta-sec p {
+  color: rgba(255,255,255,.6); font-size: 17px;
+  max-width: 520px; margin-inline: auto; margin-bottom: 36px;
+}
+.cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+/* ══ OUTROS PRODUTOS ════════════════════════════════════ */
+.outros {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-block: 48px;
+}
+.outros-header {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 32px;
+}
+.outros-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--fg-2); white-space: nowrap;
+}
+.outros-rule { flex: 1; height: 1px; background: var(--border); }
+.outros-link {
+  font-size: 13px; color: var(--blue); font-weight: 600;
+  white-space: nowrap; display: flex; align-items: center; gap: 4px;
+}
+.outros-link::after { content: '→'; }
+.outros-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.outro-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 20px 20px 20px;
+  display: flex; align-items: flex-start; gap: 14px;
+  transition: border-color .2s; text-decoration: none; color: var(--fg);
+}
+.outro-card:hover { border-color: var(--blue); }
+.outro-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: var(--blue-lt); display: grid; place-items: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.outro-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.outro-card p { font-size: 13px; color: var(--fg-2); line-height: 1.5; }
+@media (max-width: 960px) { .outros-grid { grid-template-columns: 1fr; } }
+
+/* ══ FOOTER ══════════════════════════════════════════════ */
+.footer {
+  background: #060F1C; padding-block: 48px 30px;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1fr auto auto; gap: 48px;
+  padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-brand-name {
+  display: flex; align-items: center; gap: 9px; color: white;
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px;
+  margin-bottom: 10px;
+}
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,.38); line-height: 1.55; max-width: 240px; }
+.footer-col h4 {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .1em;
+  color: rgba(255,255,255,.4); margin-bottom: 14px; font-weight: 600;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col a { color: rgba(255,255,255,.6); font-size: 14px; transition: color .15s; }
+.footer-col a:hover { color: white; }
+.footer-bottom {
+  margin-top: 28px; display: flex;
+  justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,.28); }
+
+/* ══ RESPONSIVE ══════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-inner > div:last-child { max-width: 520px; }
+  .agent-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr 1fr; }
+  .nav-links, .nav-actions { display: none; }
+  .hamburger { display: flex; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+  .steps-connector { display: none; }
+  .steps { grid-template-columns: 1fr; }
+  .plans-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  body { padding-inline: 0; }
+  .hero { padding-block: 52px 40px; }
+  .section { padding-block: 56px; }
+  .hero h1 { font-size: 30px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { white-space: normal; text-align: center; justify-content: center; max-width: 100%; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .plan { padding: 28px 22px; }
+  .flow { grid-template-columns: 1fr; }
+  .guard { flex-direction: column; padding: 22px; }
+}
+</style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="brand"><img src="assets/csgn_logo.png" alt="CSGN"></div>
-  <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="servicos.html">Serviços</a></li>
-    <li><a href="planos.html">Planos</a></li>
-    <li><a href="valor-agregado.html">Valor Agregado</a></li>
-    <li><a href="casos-de-uso.html">Casos de Uso</a></li>
-    <li><a href="contato.html">Contate-nos</a></li>
-    <li><a href="sicom.html">Conhecer o SICOM</a></li>
-  </ul>
-  <a class="cta" href="contato.html">Fale conosco</a>
-  <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');"><span></span><span></span><span></span></button>
+<!-- ═══ NAV ═════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Menu principal">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-mark">CS</div>
+        SICOM
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#agente">Agente de IA</a></li>
+        <li><a href="#produto">Produto</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#planos">Planos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://csgn-crm.vercel.app/#/entrar" class="nav-entrar">Entrar</a>
+        <a href="https://wa.me/5519996690335?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20SICOM"
+           target="_blank" rel="noopener" class="btn btn-primary nav-cta">WhatsApp</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" role="menu">
+    <a href="#agente" role="menuitem">Agente de IA</a>
+    <a href="#produto" role="menuitem">Produto</a>
+    <a href="#como-funciona" role="menuitem">Como funciona</a>
+    <a href="#planos" role="menuitem">Planos</a>
+    <a href="https://csgn-crm.vercel.app/#/entrar" role="menuitem">Entrar</a>
+    <a href="https://wa.me/5519996690335?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20SICOM"
+       target="_blank" rel="noopener" class="btn btn-primary">Falar no WhatsApp</a>
+  </div>
 </nav>
 
-<header class="hero">
-  <svg class="hero-graphic" viewBox="0 0 400 400" fill="none" aria-hidden="true">
-    <circle cx="150" cy="210" r="95" stroke="#FFFFFF" stroke-width="2"/>
-    <circle cx="235" cy="210" r="95" stroke="#FFFFFF" stroke-width="2"/>
-    <g stroke="#FFFFFF" stroke-width="1.2">
-      <line x1="260" y1="60" x2="320" y2="30"/>
-      <line x1="320" y1="30" x2="370" y2="70"/>
-      <line x1="260" y1="60" x2="300" y2="110"/>
-      <line x1="300" y1="110" x2="370" y2="70"/>
-    </g>
-    <g fill="#FFFFFF">
-      <circle cx="260" cy="60" r="4"/>
-      <circle cx="320" cy="30" r="4"/>
-      <circle cx="370" cy="70" r="4"/>
-      <circle cx="300" cy="110" r="4"/>
-    </g>
-  </svg>
-  <div class="wrap">
-    <div class="eyebrow">Sistema Comercial · Marketing · Gestão de Projetos</div>
-    <h1>O elo entre negócio, engenharia e tecnologia.</h1>
-    <p class="lead">
-      Para pequenas e médias empresas, operamos a receita: CRM com a sua marca, agentes de IA
-      que vendem no WhatsApp e marketing que gera lead medido. Para projetos de missão crítica,
-      reduzimos o risco com gestão de projetos, comissionamento, delegated design e documentação em DWG e BIM.
-    </p>
-    <div class="btns">
-      <a class="btn btn-primary" href="contato.html">Fale com um especialista</a>
-      <a class="btn btn-outline" href="servicos.html">Conhecer os serviços</a>
-    </div>
-  </div>
-</header>
+<!-- ═══ HERO ════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">CRM com agentes de IA para PME</div>
+        <h1>Seu WhatsApp atendendo e vendendo 24 horas. <em>Total controle</em> das negociações.</h1>
+        <p class="hero-sub">No WhatsApp, quem responde primeiro leva a venda. No SICOM, agentes de IA respondem em segundos, qualificam e vendem pelo seu catálogo, com o seu preço. Você aprova os descontos e acompanha tudo num painel só.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5519996690335?text=Ol%C3%A1%2C%20quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20SICOM"
+             target="_blank" rel="noopener" class="btn btn-primary btn-lg">Agendar demonstração</a>
+          <a href="#como-funciona" class="btn btn-ghost btn-lg">Ver como funciona</a>
+        </div>
+        <p class="hero-note">Demonstração gratuita com um dos sócios. Sem cartão de crédito.</p>
+        <p class="hero-note hero-lia">Quer ver na prática? Converse agora com a Lia, a agente de IA da CSGN, no canto da tela.</p>
+      </div>
 
-<section class="section bg-white">
-  <div class="kicker">Quem somos</div>
-  <h2 class="section-title">O elo que projetos críticos precisam</h2>
-  <p class="section-lead">
-    Atuamos como a ponte entre quem investe, quem projeta, quem constrói e quem opera -
-    garantindo que sistemas críticos entreguem exatamente o que foi projetado, com a
-    documentação e a governança que auditorias, seguradoras e operações 24x7 exigem.
-    Combinamos prática em comissionamento de data centers hyperscale e vendas B2B com
-    agentes de IA que atendem, qualificam e acompanham cada oportunidade, para que cada
-    decisão seja tomada com dado, não com intuição.
-  </p>
-</section>
-
-<section class="section bg-light tight">
-  <div class="kicker">Nosso escopo</div>
-  <h2 class="section-title">Quatro frentes, um único compromisso: resultado</h2>
-  <div class="grid grid-4">
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/></svg></div>
-      <h3>SICOM · Sistema Comercial</h3>
-      <p>CRM white label, agente de leads, SDR de IA no WhatsApp, gestão comercial e insights. Desconto só com aprovação humana.</p>
-    </div>
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l14-6v14L3 13v-2z"/><path d="M7 13v5a2 2 0 002 2h1"/><path d="M20 9v6"/></svg></div>
-      <h3>SIM · Marketing, SEO e leads</h3>
-      <p>Conteúdo, SEO, páginas de leads interativas e mídia para o público que compra infraestrutura digital.</p>
-    </div>
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <h3 style="color:var(--blue);">Gestão de Projetos de Missão Crítica</h3>
-      <p>Gestão de projetos complexos de data centers, comissionamento, delegated design e documentação em DWG e BIM.</p>
-    </div>
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></div>
-      <h3>Intermediações comerciais</h3>
-      <p>Projetos, data centers e fornecedores críticos, com RFP e due diligence técnica.</p>
-    </div>
-  </div>
-  <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;"><a class="btn btn-primary" href="planos.html">Ver planos do SICOM</a><a class="btn btn-primary" style="background:var(--darkBlue);" href="sicom.html">Conhecer o SICOM</a></div>
-</section>
-
-<section class="section bg-white">
-  <div class="kicker">Por que a CSGN</div>
-  <h2 class="section-title">Confiança, transparência e compromisso com a entrega</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
-      <h3>Confiança</h3>
-      <p>Curadoria técnica isenta, com histórico de decisões documentadas e auditáveis.</p>
-    </div>
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      <h3>Transparência</h3>
-      <p>Indicadores e relatórios de governança compartilhados durante todo o projeto.</p>
-    </div>
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
-      <h3>Compromisso com a entrega</h3>
-      <p>Metodologia de checkpoints que responde por prazo, qualidade e custo.</p>
+      <!-- Conversa de exemplo (substitui o dashboard genérico) -->
+      <div>
+        <div class="chat" role="img" aria-label="Exemplo de conversa no WhatsApp: o agente de IA responde em 9 segundos com o preço de tabela, avisa a equipe para confirmar o dia e envia ao dono um pedido de desconto para aprovar.">
+          <div class="chat-head">
+            <div class="chat-who"><div class="chat-av">FL</div><div>Fernanda Lopes<small>WhatsApp · 23:14</small></div></div>
+            <span class="chat-tag">Exemplo</span>
+          </div>
+          <div class="chat-body">
+            <div class="msg msg-in">Quanto fica pra instalar um split de 12 mil?</div>
+            <div class="msg msg-out"><span class="msg-meta">Agente de IA · 9 s depois</span>Instalação do split 12.000 BTUs fica R$ 790. Qual dia fica melhor pra você? A equipe confirma o horário.</div>
+            <div class="msg msg-in">Quinta de manhã. Consegue um desconto?</div>
+            <div class="chat-ok">✓ Equipe avisada · pedido de desconto enviado ao dono</div>
+          </div>
+          <div class="approve">
+            <div class="approve-top"><span>Aguardando você</span><span>Cliente recorrente</span></div>
+            <p>Desconto de <strong>8%</strong> na instalação da Fernanda. Teto para recorrente: 10%. Acima do preço mínimo.</p>
+            <div class="approve-btns"><span class="approve-yes">Aprovar</span><span class="approve-no">Recusar</span></div>
+          </div>
+        </div>
+        <p class="mock-note">Conversa ilustrativa. O agente só usa os preços e regras que você cadastrou.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-banner">
-  <svg class="hero-graphic" viewBox="0 0 400 400" fill="none" aria-hidden="true">
-    <circle cx="150" cy="210" r="95" stroke="#FFFFFF" stroke-width="2"/>
-    <circle cx="235" cy="210" r="95" stroke="#FFFFFF" stroke-width="2"/>
-  </svg>
-  <h2>Pronto para reduzir o risco do seu próximo projeto crítico?</h2>
-  <p>Fale com a CSGN e estruture governança, cronograma e investimento com clareza desde o início.</p>
-  <a class="btn btn-primary" href="contato.html">Fale conosco</a>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="col">
-      <img src="assets/csgn_logo.png" alt="CSGN" style="height:30px;background:#fff;padding:6px 10px;border-radius:6px;">
-      <p style="margin-top:14px;">Sistema comercial e marketing com IA. Gestão de projetos de missão crítica.</p>
+<!-- ═══ PROBLEMA ════════════════════════════════════ -->
+<section class="section section-alt" id="produto">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-eye">O problema</div>
+      <h2>Seu time vende, mas os contatos somem no caminho</h2>
+      <p>O gargalo raramente está na captação. Está na desorganização depois que o contato chegou.</p>
     </div>
-    <div class="col">
-      <h4>Navegação</h4>
-      <a href="servicos.html">Serviços</a>
-      <a href="planos.html">Planos</a>
-      <a href="valor-agregado.html">Valor Agregado</a>
-      <a href="casos-de-uso.html">Casos de Uso</a>
-      <a href="contato.html">Contate-nos</a>
-    </div>
-    <div class="col">
-      <h4>Legal</h4>
-      <a href="privacidade.html">Política de Privacidade</a>
-      <a href="termos.html">Termos de Uso</a>
-    </div>
-    <div class="col">
-      <h4>Contato</h4>
-      <p>comercial@csgestaoenegocios.com.br</p>
-      <p>+55 (11) 99728-3484</p>
-      <p>csgestaoenegocios.com.br</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Contatos perdidos no WhatsApp</h3>
+        <p>Contatos chegam por vários canais, ficam espalhados em conversas e nenhum sistema garante que alguém vai responder no momento certo.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Ninguém sabe o que está parado</h3>
+        <p>Sem enxergar as vendas em andamento, a negociação perdida só aparece depois que o concorrente fechou. A decisão de agir chega tarde demais.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Marketing gasta, vendas não mede</h3>
+        <p>Você investe em anúncios e não sabe qual canal trouxe mais clientes. Sem os números, cada decisão de verba é uma aposta.</p>
+      </div>
     </div>
   </div>
-  <div class="bottom">© 2026 CS Gestão e Negócios · Ampliar Gestão e Negócios Ltda. Todos os direitos reservados.</div>
+</section>
+
+
+<!-- ═══ AGENTE DE IA ══════════════════════════════════ -->
+<section class="section" id="agente">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-eye">Agente de IA</div>
+      <h2>Um vendedor que só vende o que você aprovou</h2>
+      <p>O agente atende, orça e vende apenas o que está no seu catálogo, com os preços que você definiu. Se um item não está lá, ele não inventa valor: passa a conversa para uma pessoa da sua equipe.</p>
+    </div>
+    <div class="agent-grid">
+      <article class="agent-card">
+        <span class="agent-kicker">Catálogo</span>
+        <h3>A fonte de verdade</h3>
+        <p>Cada item tem três valores: preço da primeira compra, preço para cliente recorrente e preço mínimo. Mudou no catálogo, o agente já responde com o preço novo.</p>
+      </article>
+      <article class="agent-card">
+        <span class="agent-kicker">Atende</span>
+        <h3>Responde na hora</h3>
+        <p>Tira dúvida e passa o preço de tabela a qualquer hora. Quando o cliente quer fechar, avisa a sua equipe. Com a negociação desligada, pedido de desconto vai direto para uma pessoa da equipe.</p>
+      </article>
+      <article class="agent-card">
+        <span class="agent-kicker">Negocia</span>
+        <h3>Com regra e aprovação, se você quiser</h3>
+        <p>Ligada a negociação, ele reconhece o tipo de cliente e pode pedir desconto até o teto de cada um. Também trabalha a base: recompra, renovação e reativação.</p>
+        <div class="agent-tiers"><span>Novo</span><span>Recorrente</span><span>Ouro</span></div>
+      </article>
+    </div>
+    <div class="guard">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7FB8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div>
+        <h3>Nenhum agente dá desconto sozinho</h3>
+        <p>O pedido de desconto chega como aviso no seu WhatsApp e você aprova no SICOM, pelo computador ou pelo celular. Nada é vendido abaixo do preço mínimo que você cadastrou.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-eye">Funcionalidades</div>
+      <h2>CRM e agentes de IA trabalhando juntos</h2>
+      <p>Todo cliente começa pelo CRM e liga os agentes e o marketing quando fizer sentido para o negócio.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg></div>
+        <div>
+          <h3>Nenhum contato esquecido</h3>
+          <p>Todo contato do seu WhatsApp entra no SICOM com origem, histórico e próximo passo. Nada fica perdido no celular de um vendedor.</p>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
+        <div>
+          <h3>Resposta em segundos, 24 horas</h3>
+          <p>O cliente que chama às 23h é atendido na hora, com o seu preço de tabela, e sua equipe recebe o pedido pronto pela manhã.</p>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+        <div>
+          <h3>Quem está pronto para comprar</h3>
+          <p>O agente conversa, entende necessidade, prazo e orçamento e dá uma nota de 0 a 100. Quem quer comprar vai para Vendas em andamento com o resumo da conversa.</p>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div>
+          <h3>Desconto sob controle</h3>
+          <p>Teto de desconto por tipo de cliente (novo, recorrente e ouro) e preço mínimo por item. Você aprova no SICOM, pelo computador ou pelo celular.</p>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <div>
+          <h3>Gerente de Vendas IA</h3>
+          <p>Meta do mês, negócio parado e desempenho de cada vendedor e agente, com um assistente que responde em português.</p>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg></div>
+        <div>
+          <h3>Marketing que vira venda</h3>
+          <p>Com o SIM, quem chega pelo anúncio, pelo Instagram ou pela sua página entra no SICOM com a origem marcada. No fim do mês você vê quantos contatos cada canal trouxe e de onde veio cada venda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FLUXO DO AGENTE ═══════════════════════════════ -->
+<section class="section" id="fluxo">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-eye">Do primeiro “oi” ao pagamento</div>
+      <h2>Enquanto sua equipe dorme, almoça ou está numa visita, os agentes seguem atendendo</h2>
+      <p>Quando a conversa precisa de uma pessoa, ela é avisada na hora.</p>
+    </div>
+    <ol class="flow">
+      <li><span class="flow-step">1 · Capta</span><h3>O cliente chama às 23h</h3><p>Anúncio que abre no WhatsApp, link na bio ou indicação: todo contato que chega no seu WhatsApp cai no SICOM com a origem marcada.</p></li>
+      <li><span class="flow-step">2 · Qualifica</span><h3>Pontua antes de passar adiante</h3><p>O agente separa frio, morno e quente e entrega o resumo da conversa.</p></li>
+      <li><span class="flow-step">3 · Vende</span><h3>Orça pelo seu catálogo</h3><p>Responde com o seu preço, não inventa valor e já oferece horário.</p></li>
+      <li><span class="flow-step">4 · Gere</span><h3>Você acorda com o número pronto</h3><p>Meta, vendas em andamento e resultado por vendedor e pela atendente num painel só.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ COMO FUNCIONA ════════════════════════════════ -->
+<section class="section section-alt" id="como-funciona">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-eye">Implantação</div>
+      <h2>Agilidade e suporte na implantação</h2>
+      <p>A implantação é conduzida pelos sócios da CS Gestão, não por um chatbot nem por um manual de 80 páginas.</p>
+    </div>
+    <div class="steps-wrap">
+      <div class="steps-connector" aria-hidden="true"></div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Diagnóstico</h3>
+          <p>Um dos sócios mapeia como você vende hoje, quais canais trazem contatos e o que a equipe usa. A configuração parte da sua realidade.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Configuração e carga</h3>
+          <p>O SICOM é ajustado com as etapas do seu processo comercial. Contatos existentes são importados e a equipe treinada.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Operação e suporte</h3>
+          <p>Sua equipe começa a usar com acompanhamento de perto. Dúvidas vão direto para os sócios, sem fila de tickets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PLANOS ══════════════════════════════════════ -->
+<section class="section" id="planos">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-eye">Planos</div>
+      <h2>Escolha o que a sua equipe precisa agora</h2>
+      <p>Contrato de 12 meses. Implantação inclusa nos dois planos, feita junto com um dos sócios.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan">
+        <div class="plan-name">SICOM MEI</div>
+        <p class="plan-desc">Para a loja e o negócio pequeno: seu CRM e um agente de IA que atende e vende no WhatsApp enquanto você trabalha.</p>
+        <div class="plan-price">
+          <div class="plan-from">Micro e MEI</div>
+          <div class="plan-val">R$&nbsp;399,99 <span class="plan-per">/mês</span></div>
+        </div>
+        <ul class="plan-items">
+          <li>1 agente de IA que atende, orça e vende 24h</li>
+          <li>CRM com vendas em andamento e cadastro de clientes</li>
+          <li>Catálogo de produtos e serviços</li>
+          <li>Total controle das negociações, até pelo celular</li>
+          <li>Lista de clientes parados para você retomar</li>
+          <li>1 usuário e 200 conversas por mês</li>
+        </ul>
+        <a href="https://wa.me/5519996690335?text=Quero%20conhecer%20o%20plano%20SICOM%20MEI"
+           target="_blank" rel="noopener" class="btn btn-outline">Falar sobre este plano</a>
+      </div>
+      <div class="plan">
+        <div class="plan-name">SICOM</div>
+        <p class="plan-desc">Para equipes que precisam organizar contatos e acompanhar cada venda com clareza.</p>
+        <div class="plan-price">
+          <div class="plan-from">A partir de</div>
+          <div class="plan-val">R$&nbsp;1.499 <span class="plan-per">/mês</span></div>
+        </div>
+        <ul class="plan-items">
+          <li>Agente de IA que atende, qualifica e vende 24h</li>
+          <li>CRM completo com histórico de contatos</li>
+          <li>Vendas em andamento por etapa, num quadro visual</li>
+          <li>Resumo diário com o que precisa de atenção</li>
+          <li>Como foi o mês: vendas por vendedor e pela atendente</li>
+          <li>Chamar de volta: clientes parados para retomar</li>
+          <li>Implantação inclusa com os sócios</li>
+          <li>Suporte direto sem fila de tickets</li>
+        </ul>
+        <a href="https://wa.me/5519996690335?text=Quero%20conhecer%20o%20plano%20SICOM"
+           target="_blank" rel="noopener" class="btn btn-outline">Falar sobre este plano</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan-badge">Complemento</div>
+        <div class="plan-name">Marketing (SIM)</div>
+        <p class="plan-desc">Contratado junto com o SICOM MEI ou o SICOM. A CSGN cuida do marketing que traz contatos para o seu WhatsApp.</p>
+        <div class="plan-price">
+          <div class="plan-from">A partir de</div>
+          <div class="plan-val">R$&nbsp;1.499 <span class="plan-per">/mês</span></div>
+        </div>
+        <ul class="plan-items">
+          <li>Diagnóstico do seu marketing hoje</li>
+          <li>Posts e artes para Instagram e Facebook</li>
+          <li>Página de orçamento e presença no Google da sua região</li>
+          <li>Anúncios no Meta com a verba já incluída no valor</li>
+          <li>Todo contato cai no SICOM com a origem marcada</li>
+          <li>Resumo do mês: quantos contatos cada canal trouxe</li>
+        </ul>
+        <a href="https://wa.me/5519996690335?text=Quero%20conhecer%20o%20Marketing%20(SIM)%20da%20CSGN"
+           target="_blank" rel="noopener" class="btn">Falar sobre o marketing</a>
+      </div>
+    </div>
+    <p class="plans-note">SICOM MEI: 1 usuário · SICOM: até 5 usuários · Usuário extra R$ 39,90/mês · Marketing (SIM): valor definido no diagnóstico, pela fase do seu marketing</p>
+  </div>
+</section>
+
+
+<!-- ═══ OUTROS PRODUTOS CS ════════════════════════════ -->
+<section class="outros">
+  <div class="container">
+    <div class="outros-header">
+      <span class="outros-eyebrow">Outros serviços CS Gestão</span>
+      <div class="outros-rule"></div>
+    </div>
+    <div class="outros-grid">
+      <a class="outro-card" href="https://wa.me/5519996690335?text=Quero%20saber%20mais%20sobre%20a%20Consultoria%20Comercial%20da%20CSGN" target="_blank" rel="noopener">
+        <div class="outro-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h2a2 2 0 0 1 2 2v10"/><path d="M3 21h18M8 7h4M8 11h4M8 15h4"/></svg></div>
+        <div>
+          <h3>Consultoria Comercial</h3>
+          <p>Diagnóstico e reestruturação do processo de vendas para PMEs que querem crescer com método.</p>
+        </div>
+      </a>
+      <a class="outro-card" href="https://wa.me/5519996690335?text=Quero%20saber%20mais%20sobre%20Gest%C3%A3o%20de%20Projetos%20Cr%C3%ADticos%20da%20CSGN" target="_blank" rel="noopener">
+        <div class="outro-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+        <div>
+          <h3>Gestão de Projetos Críticos</h3>
+          <p>Gestão de projetos de missão crítica e data centers: comissionamento, delegated design e documentação em DWG e BIM.</p>
+        </div>
+      </a>
+      <a class="outro-card" href="https://wa.me/5519996690335?text=Quero%20saber%20mais%20sobre%20Automa%C3%A7%C3%B5es%20e%20Agentes%20com%20IA%20da%20CSGN" target="_blank" rel="noopener">
+        <div class="outro-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <div>
+          <h3>Automações e Agentes com Inteligência Artificial</h3>
+          <p>Aquela tarefa que toma horas toda semana passa a rodar sozinha. Criamos agentes de IA e automações sob medida, ligados aos sistemas que você já usa, para responder, organizar, gerar relatórios e propostas, com uma pessoa aprovando o que importa.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ════════════════════════════════════ -->
+<section class="cta-sec">
+  <div class="container">
+    <h2>Pronto para parar de perder clientes?</h2>
+    <p>Fale com um dos sócios da CS Gestão e veja o SICOM funcionando numa demonstração com exemplos do seu ramo.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5519996690335?text=Ol%C3%A1%2C%20quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20SICOM"
+         target="_blank" rel="noopener" class="btn btn-primary btn-lg">Agendar demonstração pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">
+          <div class="logo-mark" style="width:28px;height:28px;font-size:11px">CS</div>
+          CS Gestão e Negócios
+        </div>
+        <p class="footer-tagline">CRM com agentes de IA que atendem e vendem no WhatsApp, para pequenas e médias empresas.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produto</h4>
+        <ul>
+          <li><a href="#agente">Agente de IA</a></li>
+          <li><a href="#produto">Funcionalidades</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#planos">Planos e preços</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="https://csgn-crm.vercel.app/#/entrar">Entrar no SICOM</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CS Gestão e Negócios. Todos os direitos reservados.</p>
+      <p>CS Gestão e Negócios é o nome fantasia da Ampliar Gestão e Negócios Ltda.</p>
+    </div>
+  </div>
 </footer>
 
-<!-- Chat da Lia (CSGN): atende os visitantes e avisa os sócios -->
+<script>
+(function () {
+  // Hamburger
+  var btn = document.getElementById('hamburger');
+  var mob = document.getElementById('nav-mobile');
+  btn.addEventListener('click', function () {
+    var open = mob.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  });
+  // Fechar ao clicar num link
+  mob.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      mob.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menu');
+    });
+  });
+  // Smooth scroll nas âncoras internas
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+})();
+</script>
+
+<!-- Chat da Lia (CSGN): atende os visitantes e avisa os sócios. Fica isolado em Shadow DOM e aparece no canto inferior direito. -->
 <script src="https://csgn-crm.vercel.app/widget.js" data-privacy="/privacidade.html" defer></script>
+<div id="csgn-lia"></div>
 </body>
 </html>

@@ -2,105 +2,121 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Termos de Uso - CS Gestão e Negócios</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Termos de Uso | CS Gestão e Negócios</title>
+<meta name="description" content="Termos de uso do site da CS Gestão e Negócios (Ampliar Gestão e Negócios Ltda.), do chat da Lia e do acesso ao SICOM.">
 <meta name="facebook-domain-verification" content="38vwxsnxzs63l57np0adpwxpz6wrpa" />
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/csgn_logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --navy: #0B1E3A; --blue: #0A5A96; --blue-lt: #E6F0FA; --orange: #E05A1B; --orange-dk: #C24D14;
+  --bg: #FFFFFF; --bg-alt: #F4F8FC; --fg: #0B1E3A; --fg-2: #506070; --border: #D2E2F0; --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0B1720; --bg-alt: #0E2030; --fg: #DDEAF6; --fg-2: #7A9AB5; --border: #1A3050; --blue-lt: #0C2540; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #0B1720; --bg-alt: #0E2030; --fg: #DDEAF6; --fg-2: #7A9AB5; --border: #1A3050; --blue-lt: #0C2540; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; font-size: 15px; line-height: 1.7; }
+h1, h2, h3 { font-family: 'Sora', system-ui, sans-serif; line-height: 1.25; text-wrap: balance; }
+a { color: var(--blue); }
+.container { max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+.nav { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.07); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 13px; }
+.nav-logo { display: flex; align-items: center; gap: 10px; color: #fff; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; }
+.logo-mark { width: 32px; height: 32px; border-radius: 6px; background: var(--blue); display: grid; place-items: center; font-size: 13px; font-weight: 800; color: #fff; }
+.nav-actions { display: flex; gap: 10px; align-items: center; }
+.nav-link { color: rgba(255,255,255,.75); font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,.18); text-decoration: none; white-space: nowrap; }
+.nav-link:hover { color: #fff; border-color: rgba(255,255,255,.45); }
+.hero { background: var(--navy); padding-block: 56px 48px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+.hero h1 { color: #fff; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 10px; }
+.hero p { color: rgba(255,255,255,.65); font-size: 14px; }
+.doc { max-width: 780px; margin-inline: auto; padding: 56px 20px 72px; }
+.doc h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; }
+.doc h3 { font-size: 15px; font-weight: 700; margin: 20px 0 6px; }
+.doc p, .doc li { color: var(--fg-2); }
+.doc p + p { margin-top: 10px; }
+.doc ul { padding-left: 20px; margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.doc strong { color: var(--fg); }
+.box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-top: 8px; }
+.footer { background: #060F1C; padding-block: 32px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer p, .footer a { font-size: 12px; color: rgba(255,255,255,.45); text-decoration: none; }
+.footer a:hover { color: #fff; }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 620px) {
+  .nav-link.hide-sm { display: none; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+</style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="brand"><img src="assets/csgn_logo.png" alt="CSGN"></div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="servicos.html">Serviços</a></li>
-    <li><a href="planos.html">Planos</a></li>
-    <li><a href="valor-agregado.html">Valor Agregado</a></li>
-    <li><a href="casos-de-uso.html">Casos de Uso</a></li>
-    <li><a href="contato.html">Contate-nos</a></li>
-    <li><a href="sicom.html">Conhecer o SICOM</a></li>
-  </ul>
-  <a class="cta" href="contato.html">Fale conosco</a>
-  <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');"><span></span><span></span><span></span></button>
+<nav class="nav" aria-label="Menu principal">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-mark">CS</div>SICOM</a>
+    <div class="nav-actions">
+      <a href="index.html" class="nav-link hide-sm">Voltar ao site</a>
+      <a href="https://csgn-crm.vercel.app/#/entrar" class="nav-link">Entrar</a>
+    </div>
+  </div>
 </nav>
 
-<header class="hero" style="padding:56px 40px 56px;">
-  <div class="wrap">
+<header class="hero">
+  <div class="container">
     <div class="eyebrow">Legal</div>
-    <h1 style="font-size:30px;">Termos de Uso</h1>
-    <p class="lead">Última atualização: [DD/MM/AAAA]</p>
+    <h1>Termos de Uso</h1>
+    <p>Última atualização: 16 de outubro de 2026</p>
   </div>
 </header>
 
-<section class="section bg-white" style="max-width:900px;">
-  <p class="section-lead">
-    O acesso e uso deste site (csgestaoenegocios.com.br), de titularidade da CS Gestão e Negócios Ltda.
-    ("CSGN"), estão sujeitos aos termos abaixo.
-  </p>
+<main class="doc">
+  <p>O acesso e o uso deste site (csgestaoenegocios.com.br) e dos canais de atendimento ligados a ele seguem os termos abaixo. O site é mantido pela <strong>Ampliar Gestão e Negócios Ltda.</strong>, que usa o nome fantasia <strong>CS Gestão e Negócios</strong> ("CSGN").</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:32px;">1. Objeto do site</h2>
-  <p class="section-lead">Este site tem caráter institucional e informativo, apresentando os
-    serviços da CSGN. Os "casos de uso" descrevem cenários típicos de atuação, sem identificar
-    clientes, e não representam relações contratuais divulgadas sem autorização.</p>
+  <h2>1. Objeto do site</h2>
+  <p>Este site apresenta o SICOM, o Marketing (SIM) e os demais serviços da CSGN, com caráter informativo. As conversas mostradas como exemplo são ilustrativas e não identificam clientes.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">2. Propriedade intelectual</h2>
-  <p class="section-lead">Marca, logotipo, textos, layout e demais elementos deste site são de
-    titularidade da CSGN ou usados sob licença, sendo vedada a reprodução total ou parcial sem
-    autorização prévia por escrito.</p>
+  <h2>2. Preços e contratação</h2>
+  <p>Os preços publicados aqui são de referência. A contratação do SICOM, do Marketing (SIM) ou de qualquer outro serviço só acontece por proposta e contrato próprios, aceitos pelas partes, que definem escopo, prazo, valores e condições. Em caso de diferença entre o site e o contrato, vale o contrato.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">3. Formulário de contato</h2>
-  <p class="section-lead">Ao preencher o formulário de contato, você concorda com o tratamento
-    dos dados fornecidos conforme nossa <a href="privacidade.html">Política de Privacidade</a>.
-    O envio do formulário não gera, por si só, qualquer relação contratual entre as partes.</p>
+  <h2>3. Chat com a Lia</h2>
+  <p>A Lia é uma assistente virtual com inteligência artificial. Ela responde com base nas informações da CSGN, mas pode se enganar. As respostas dela têm caráter informativo e não constituem proposta, desconto ou condição comercial: esses pontos só valem quando confirmados pela equipe comercial da CSGN, por escrito. Não envie senhas, dados de cartão ou dados sensíveis pelo chat.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">4. Isenção de responsabilidade</h2>
-  <p class="section-lead">As informações deste site têm caráter geral e não constituem
-    proposta comercial vinculante, parecer técnico ou jurídico. Propostas comerciais formais
-    são emitidas em documento específico, assinado pelas partes.</p>
+  <h2>4. Uso do SICOM</h2>
+  <p>O acesso ao SICOM pelo botão "Entrar" é exclusivo de empresas clientes e dos usuários que elas cadastrarem, e segue o contrato de cada cliente. O usuário é responsável por guardar a própria senha e por usar o sistema de acordo com a lei, inclusive a LGPD, em relação aos contatos da sua empresa.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">5. Alterações destes termos</h2>
-  <p class="section-lead">A CSGN pode atualizar estes Termos a qualquer momento, sendo a
-    versão vigente sempre a publicada nesta página.</p>
+  <h2>5. Dados pessoais</h2>
+  <p>O tratamento de dados pessoais feito pelo site, pelo chat e pelo SICOM está descrito na <a href="privacidade.html">Política de Privacidade</a>.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">6. Foro</h2>
-  <p class="section-lead">Fica eleito o foro da comarca de Valinhos/SP para dirimir
-    controvérsias relacionadas a estes Termos.</p>
+  <h2>6. Propriedade intelectual</h2>
+  <p>Marca, logotipo, textos, layout, telas do SICOM e demais elementos deste site pertencem à CSGN ou são usados sob licença. É proibida a reprodução total ou parcial sem autorização prévia por escrito.</p>
 
-  <p style="font-size:11px;color:var(--textGray);font-style:italic;margin-top:32px;">
-    ⚠ Modelo de referência. Revisar com advogado(a) antes da publicação definitiva.
-  </p>
-</section>
+  <h2>7. Links externos</h2>
+  <p>Alguns botões levam ao WhatsApp e a outros serviços de terceiros, que têm termos e políticas próprios.</p>
 
-<footer>
-  <div class="wrap">
-    <div class="col">
-      <img src="assets/csgn_logo.png" alt="CSGN" style="height:30px;background:#fff;padding:6px 10px;border-radius:6px;">
-      <p style="margin-top:14px;">Sistema comercial e marketing com IA. Gestão de projetos de missão crítica.</p>
-    </div>
-    <div class="col">
-      <h4>Navegação</h4>
-      <a href="servicos.html">Serviços</a>
-      <a href="planos.html">Planos</a>
-      <a href="valor-agregado.html">Valor Agregado</a>
-      <a href="casos-de-uso.html">Casos de Uso</a>
-      <a href="contato.html">Contate-nos</a>
-    </div>
-    <div class="col">
-      <h4>Legal</h4>
-      <a href="privacidade.html">Política de Privacidade</a>
+  <h2>8. Responsabilidade</h2>
+  <p>As informações deste site são gerais e não substituem parecer técnico ou jurídico. A CSGN trabalha para manter o site no ar e as informações corretas, mas não garante que ele esteja sempre disponível ou livre de erros.</p>
+
+  <h2>9. Alterações destes termos</h2>
+  <p>Estes termos podem ser atualizados. A versão válida é sempre a publicada nesta página, com a data no topo.</p>
+
+  <h2>10. Foro</h2>
+  <p>Fica eleito o foro da comarca de Valinhos/SP para resolver questões relacionadas a estes termos.</p>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© 2026 CS Gestão e Negócios · nome fantasia da Ampliar Gestão e Negócios Ltda.</p>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="privacidade.html">Privacidade</a>
       <a href="termos.html">Termos de Uso</a>
     </div>
-    <div class="col">
-      <h4>Contato</h4>
-      <p>comercial@csgestaoenegocios.com.br</p>
-      <p>+55 (11) 99728-3484</p>
-      <p>csgestaoenegocios.com.br</p>
-    </div>
   </div>
-  <div class="bottom">© 2026 CS Gestão e Negócios · Ampliar Gestão e Negócios Ltda. Todos os direitos reservados.</div>
 </footer>
 
-<!-- Chat da Lia (CSGN): atende os visitantes e avisa os sócios -->
 <script src="https://csgn-crm.vercel.app/widget.js" data-privacy="/privacidade.html" defer></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-DirectoryIndex sicom.html index.html
+DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -6,6 +6,10 @@ DirectoryIndex sicom.html index.html
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
   RewriteRule "(^|/)\.git" - [F,L]
+
+  # Páginas antigas levam para a parte certa da landing
+  RewriteRule ^planos\.html$ /#planos [R=301,NE,L]
+  RewriteRule ^(sicom|servicos|contato|casos-de-uso|valor-agregado)\.html$ / [R=301,L]
 </IfModule>
 
 <FilesMatch "^(\.cpanel\.yml|\.gitignore|\.htaccess|publicar\.bat|publicar-deploy\.bat)$">

@@ -2,119 +2,151 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacidade - CS Gestão e Negócios</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Política de Privacidade | CS Gestão e Negócios</title>
+<meta name="description" content="Como a CS Gestão e Negócios (Ampliar Gestão e Negócios Ltda.) trata dados pessoais no site, no chat da Lia e no SICOM.">
 <meta name="facebook-domain-verification" content="38vwxsnxzs63l57np0adpwxpz6wrpa" />
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/csgn_logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --navy: #0B1E3A; --blue: #0A5A96; --blue-lt: #E6F0FA; --orange: #E05A1B; --orange-dk: #C24D14;
+  --bg: #FFFFFF; --bg-alt: #F4F8FC; --fg: #0B1E3A; --fg-2: #506070; --border: #D2E2F0; --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0B1720; --bg-alt: #0E2030; --fg: #DDEAF6; --fg-2: #7A9AB5; --border: #1A3050; --blue-lt: #0C2540; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #0B1720; --bg-alt: #0E2030; --fg: #DDEAF6; --fg-2: #7A9AB5; --border: #1A3050; --blue-lt: #0C2540; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; font-size: 15px; line-height: 1.7; }
+h1, h2, h3 { font-family: 'Sora', system-ui, sans-serif; line-height: 1.25; text-wrap: balance; }
+a { color: var(--blue); }
+.container { max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+.nav { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.07); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 13px; }
+.nav-logo { display: flex; align-items: center; gap: 10px; color: #fff; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; }
+.logo-mark { width: 32px; height: 32px; border-radius: 6px; background: var(--blue); display: grid; place-items: center; font-size: 13px; font-weight: 800; color: #fff; }
+.nav-actions { display: flex; gap: 10px; align-items: center; }
+.nav-link { color: rgba(255,255,255,.75); font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,.18); text-decoration: none; white-space: nowrap; }
+.nav-link:hover { color: #fff; border-color: rgba(255,255,255,.45); }
+.hero { background: var(--navy); padding-block: 56px 48px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+.hero h1 { color: #fff; font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 10px; }
+.hero p { color: rgba(255,255,255,.65); font-size: 14px; }
+.doc { max-width: 780px; margin-inline: auto; padding: 56px 20px 72px; }
+.doc h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; }
+.doc h3 { font-size: 15px; font-weight: 700; margin: 20px 0 6px; }
+.doc p, .doc li { color: var(--fg-2); }
+.doc p + p { margin-top: 10px; }
+.doc ul { padding-left: 20px; margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.doc strong { color: var(--fg); }
+.box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-top: 8px; }
+.footer { background: #060F1C; padding-block: 32px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer p, .footer a { font-size: 12px; color: rgba(255,255,255,.45); text-decoration: none; }
+.footer a:hover { color: #fff; }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 620px) {
+  .nav-link.hide-sm { display: none; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+</style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="brand"><img src="assets/csgn_logo.png" alt="CSGN"></div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="servicos.html">Serviços</a></li>
-    <li><a href="planos.html">Planos</a></li>
-    <li><a href="valor-agregado.html">Valor Agregado</a></li>
-    <li><a href="casos-de-uso.html">Casos de Uso</a></li>
-    <li><a href="contato.html">Contate-nos</a></li>
-    <li><a href="sicom.html">Conhecer o SICOM</a></li>
-  </ul>
-  <a class="cta" href="contato.html">Fale conosco</a>
-  <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" onclick="var n=this.closest('.nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');"><span></span><span></span><span></span></button>
+<nav class="nav" aria-label="Menu principal">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-mark">CS</div>SICOM</a>
+    <div class="nav-actions">
+      <a href="index.html" class="nav-link hide-sm">Voltar ao site</a>
+      <a href="https://csgn-crm.vercel.app/#/entrar" class="nav-link">Entrar</a>
+    </div>
+  </div>
 </nav>
 
-<header class="hero" style="padding:56px 40px 56px;">
-  <div class="wrap">
+<header class="hero">
+  <div class="container">
     <div class="eyebrow">Legal</div>
-    <h1 style="font-size:30px;">Política de Privacidade</h1>
-    <p class="lead">Última atualização: [DD/MM/AAAA]</p>
+    <h1>Política de Privacidade</h1>
+    <p>Última atualização: 16 de outubro de 2026</p>
   </div>
 </header>
 
-<section class="section bg-white" style="max-width:900px;">
-  <p class="section-lead">
-    Esta Política de Privacidade descreve como a CS Gestão e Negócios Ltda. ("CSGN") coleta, utiliza e protege dados pessoais de visitantes deste site
-    e de contatos comerciais, em conformidade com a Lei nº 13.709/2018 (Lei Geral de Proteção
-    de Dados Pessoais - LGPD).
-  </p>
+<main class="doc">
+  <p>Esta política explica como a <strong>Ampliar Gestão e Negócios Ltda.</strong>, que usa o nome fantasia <strong>CS Gestão e Negócios</strong> ("CSGN"), trata dados pessoais neste site, no chat da Lia e no SICOM, em conformidade com a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais, LGPD).</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:32px;">1. Dados coletados</h2>
-  <p class="section-lead">Coletamos os dados que você fornece voluntariamente pelo formulário
-    de contato (nome, empresa, e-mail, serviço de interesse e mensagem), além de dados
-    técnicos de navegação (ex: endereço IP, tipo de navegador) quando aplicável.</p>
+  <h2>1. Em que papel a CSGN trata seus dados</h2>
+  <p>A LGPD separa quem decide sobre os dados (controlador) de quem trata os dados em nome de outra empresa (operador). A CSGN atua nos dois papéis, conforme o caso:</p>
+  <div class="box">
+    <p><strong>Controladora</strong>: dados de visitantes deste site, de quem conversa com a Lia, de quem fala com a CSGN pelo WhatsApp e dos responsáveis e usuários das empresas clientes do SICOM (cadastro, contrato, cobrança e acesso ao sistema).</p>
+    <p><strong>Operadora</strong>: dados que as empresas clientes colocam ou recebem dentro do SICOM, como os contatos, clientes, conversas de WhatsApp, vendas e catálogo delas. Nesse caso a empresa cliente é a controladora, decide o uso desses dados e responde aos titulares; a CSGN trata esses dados só para prestar o serviço contratado e segue as instruções do cliente.</p>
+  </div>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">1.1 Chat com a assistente virtual (Lia)</h2>
-  <p class="section-lead">O site tem um chat com a Lia, assistente virtual com inteligência artificial
-    operada pela CSGN. Guardamos o que você escreve no chat e os dados que decidir informar (nome,
-    empresa, WhatsApp, e-mail e o que procura) para responder e para a equipe da CSGN retornar o
-    contato. O endereço IP é guardado só de forma cifrada, para evitar abuso do serviço. As mensagens
-    são processadas por provedores de inteligência artificial e de nuvem contratados pela CSGN, sob
-    obrigação de confidencialidade. Não envie senhas, dados de cartão ou dados sensíveis pelo chat.</p>
+  <h2>2. Dados que coletamos</h2>
+  <h3>2.1 Site e chat da Lia</h3>
+  <p>A Lia é a assistente virtual com inteligência artificial da CSGN. Guardamos o que você escreve no chat e os dados que decidir informar (nome, empresa, WhatsApp, e-mail e o que procura) para responder e para a equipe comercial da CSGN retornar o contato. O endereço IP é guardado só de forma cifrada, para evitar abuso do serviço. O chat guarda no seu navegador um identificador da conversa para continuar de onde parou. Não envie senhas, dados de cartão ou dados sensíveis pelo chat.</p>
+  <h3>2.2 Contato pelo WhatsApp</h3>
+  <p>Quando você fala com a CSGN pelo WhatsApp, guardamos seu número, nome de perfil e as mensagens trocadas para atender e acompanhar a negociação.</p>
+  <h3>2.3 Clientes do SICOM</h3>
+  <p>Dos responsáveis e usuários das empresas clientes: nome, e-mail, telefone, cargo, CPF ou CNPJ e endereço para contrato e cobrança, registros de acesso (data, hora e ações no sistema) e histórico de pagamentos.</p>
+  <h3>2.4 Dados tratados no SICOM em nome do cliente</h3>
+  <p>Contatos e clientes da empresa cliente (nome, telefone, e-mail, o que pediram), conversas de WhatsApp atendidas pelo agente de IA ou pela equipe, compras, orçamentos, anotações e o catálogo de produtos e preços.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">2. Finalidade do tratamento</h2>
-  <p class="section-lead">Os dados são utilizados exclusivamente para responder ao contato
-    comercial, elaborar propostas e, quando houver relação contratual, para a execução dos
-    serviços contratados. Não vendemos nem compartilhamos dados pessoais com terceiros para
-    fins de marketing de terceiros.</p>
+  <h2>3. Para que usamos</h2>
+  <ul>
+    <li>Responder contatos comerciais, fazer demonstrações e enviar propostas.</li>
+    <li>Prestar o serviço contratado: operar o CRM, os agentes de IA e os avisos da equipe.</li>
+    <li>Emitir contrato, cobrar e cumprir obrigações legais e fiscais.</li>
+    <li>Manter o sistema seguro, registrar acessos e prevenir abuso e fraude.</li>
+    <li>Dar suporte e melhorar o serviço com dados agregados, que não identificam pessoas.</li>
+  </ul>
+  <p>As bases legais são, conforme o caso, a execução de contrato e de procedimentos preliminares a ele, o cumprimento de obrigação legal, o legítimo interesse da CSGN em responder contatos e manter a segurança, e o consentimento quando ele for pedido. Não vendemos dados pessoais e não usamos os dados dos clientes do SICOM para fins próprios de marketing.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">3. Compartilhamento de dados</h2>
-  <p class="section-lead">Dados podem ser compartilhados com prestadores de serviço da CSGN
-    (ex: ferramentas de e-mail, hospedagem) estritamente para viabilizar o atendimento, sempre
-    sob obrigação contratual de confidencialidade e proteção de dados.</p>
+  <h2>4. Inteligência artificial</h2>
+  <p>As mensagens do chat da Lia e as conversas atendidas pelos agentes do SICOM são processadas por um provedor de inteligência artificial contratado pela CSGN, apenas para gerar a resposta da conversa. Os agentes só usam as informações, preços e regras cadastrados pela empresa, e pedidos de desconto ou decisões importantes passam por uma pessoa.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">4. Direitos do titular</h2>
-  <p class="section-lead">Nos termos da LGPD, você pode solicitar a qualquer momento a
-    confirmação de tratamento, acesso, correção, anonimização, portabilidade ou eliminação de
-    seus dados pessoais, mediante contato em <a href="mailto:comercial@csgestaoenegocios.com.br">comercial@csgestaoenegocios.com.br</a>.</p>
+  <h2>5. Com quem compartilhamos</h2>
+  <p>Só com prestadores necessários para o serviço funcionar, sob obrigação de confidencialidade e proteção de dados:</p>
+  <ul>
+    <li>Banco de dados e hospedagem do sistema (Supabase, com servidores em São Paulo, e Vercel).</li>
+    <li>Inteligência artificial (Anthropic).</li>
+    <li>Mensagens de WhatsApp (Meta, pela API oficial do WhatsApp).</li>
+    <li>Cobrança e pagamentos (PagBank) e envio de e-mails transacionais.</li>
+    <li>Hospedagem deste site (HostGator).</li>
+  </ul>
+  <p>Também podemos compartilhar dados quando a lei ou uma autoridade competente exigir.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">5. Retenção e segurança</h2>
-  <p class="section-lead">Os dados são mantidos pelo tempo necessário à finalidade que
-    motivou sua coleta ou conforme exigido por lei, e protegidos por medidas técnicas e
-    administrativas razoáveis contra acesso não autorizado.</p>
+  <h2>6. Transferência internacional</h2>
+  <p>Alguns desses prestadores processam dados fora do Brasil, como o provedor de inteligência artificial e parte da infraestrutura de hospedagem. Nesses casos a transferência segue o artigo 33 da LGPD, com contratos que exigem proteção de dados equivalente.</p>
 
-  <h2 class="section-title" style="font-size:19px;margin-top:28px;">6. Contato do encarregado (DPO)</h2>
-  <p class="section-lead">Dúvidas sobre esta Política podem ser enviadas para
-    <a href="mailto:comercial@csgestaoenegocios.com.br">comercial@csgestaoenegocios.com.br</a> aos cuidados de
-    [nome do encarregado de dados / DPO, quando definido].</p>
+  <h2>7. Por quanto tempo guardamos</h2>
+  <p>Contatos comerciais ficam guardados enquanto houver negociação ou interesse e podem ser excluídos a pedido. Dados de clientes do SICOM ficam guardados durante o contrato; ao fim dele, os dados tratados em nome do cliente são devolvidos ou eliminados conforme o contrato. Dados de contrato, cobrança e registros de acesso ficam guardados pelo prazo que a lei exigir.</p>
 
-  <p style="font-size:11px;color:var(--textGray);font-style:italic;margin-top:32px;">
-    ⚠ Modelo de referência. Revisar com advogado(a) especializado(a) em proteção de dados
-    antes da publicação definitiva, ajustando aos processos reais de tratamento de dados da
-    CSGN.
-  </p>
-</section>
+  <h2>8. Segurança</h2>
+  <p>Cada empresa cliente só enxerga os próprios dados dentro do SICOM. O acesso é por perfil (dono, vendedor, financeiro), as chaves de integração ficam cifradas, as ações importantes ficam registradas e a equipe da CSGN não acessa os contatos e as conversas das empresas clientes: o suporte vê só os dados de cadastro da empresa e números agregados.</p>
 
-<footer>
-  <div class="wrap">
-    <div class="col">
-      <img src="assets/csgn_logo.png" alt="CSGN" style="height:30px;background:#fff;padding:6px 10px;border-radius:6px;">
-      <p style="margin-top:14px;">Sistema comercial e marketing com IA. Gestão de projetos de missão crítica.</p>
-    </div>
-    <div class="col">
-      <h4>Navegação</h4>
-      <a href="servicos.html">Serviços</a>
-      <a href="planos.html">Planos</a>
-      <a href="valor-agregado.html">Valor Agregado</a>
-      <a href="casos-de-uso.html">Casos de Uso</a>
-      <a href="contato.html">Contate-nos</a>
-    </div>
-    <div class="col">
-      <h4>Legal</h4>
-      <a href="privacidade.html">Política de Privacidade</a>
+  <h2>9. Seus direitos</h2>
+  <p>Você pode pedir a qualquer momento confirmação de que tratamos seus dados, acesso, correção, anonimização, portabilidade, eliminação, informação sobre com quem compartilhamos e revogação do consentimento, quando ele for a base do tratamento.</p>
+  <p>Se seus dados estão no SICOM porque você é contato ou cliente de uma empresa que usa o sistema, o pedido deve ser feito a essa empresa, que é a controladora. Se ela nos encaminhar, ajudamos a atender.</p>
+
+  <h2>10. Encarregado de dados</h2>
+  <p>Pedidos e dúvidas sobre esta política e sobre seus dados: <a href="mailto:comercial@csgestaoenegocios.com.br">comercial@csgestaoenegocios.com.br</a>, aos cuidados do encarregado de dados da CSGN.</p>
+
+  <h2>11. Mudanças nesta política</h2>
+  <p>Esta política pode ser atualizada. A versão válida é sempre a publicada nesta página, com a data no topo.</p>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© 2026 CS Gestão e Negócios · nome fantasia da Ampliar Gestão e Negócios Ltda.</p>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="privacidade.html">Privacidade</a>
       <a href="termos.html">Termos de Uso</a>
     </div>
-    <div class="col">
-      <h4>Contato</h4>
-      <p>comercial@csgestaoenegocios.com.br</p>
-      <p>+55 (11) 99728-3484</p>
-      <p>csgestaoenegocios.com.br</p>
-    </div>
   </div>
-  <div class="bottom">© 2026 CS Gestão e Negócios · Ampliar Gestão e Negócios Ltda. Todos os direitos reservados.</div>
 </footer>
 
-<!-- Chat da Lia (CSGN): atende os visitantes e avisa os sócios -->
 <script src="https://csgn-crm.vercel.app/widget.js" data-privacy="/privacidade.html" defer></script>
 </body>
 </html>
